@@ -1,0 +1,802 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undangan Pernikahan - Romeo & Juliet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "wedding-gold": "#D4AF37",
+              "wedding-dark": "#2C3E50",
+              "wedding-light": "#F9F6F0",
+            },
+            fontFamily: {
+              serif: ['"Cormorant Garamond"', "serif"],
+              sans: ["Montserrat", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 1s ease-out,
+          transform 1s ease-out;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      #hero-overlay {
+        transition: opacity 1s ease-in-out;
+      }
+
+      .flower-bg {
+        background-image: url("https://placehold.co/800x600/F9F6F0/D4AF37?text=Floral+Pattern");
+        background-size: cover;
+        background-attachment: fixed;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-wedding-light text-wedding-dark font-sans overflow-hidden"
+    id="body"
+  >
+    <div
+      id="hero-overlay"
+      class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-wedding-dark text-wedding-light w-full h-full"
+      style="
+        background-image: url(&quot;https://placehold.co/1920x1080/2C3E50/D4AF37?text=Pre-Wedding+Photo&quot;);
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+      <div class="relative z-10 text-center px-4">
+        <h2
+          class="text-xl md:text-2xl font-sans tracking-widest uppercase mb-4 text-wedding-gold"
+        >
+          The Wedding Of
+        </h2>
+        <h1 class="text-6xl md:text-8xl font-serif font-semibold italic mb-8">
+          Romeo & Juliet
+        </h1>
+        <p class="mb-8 font-light tracking-wider">
+          Kepada Yth. Bapak/Ibu/Saudara/i
+        </p>
+        <button
+          id="open-invitation"
+          class="bg-wedding-gold hover:bg-yellow-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 flex items-center justify-center mx-auto gap-2"
+        >
+          <i class="fa-solid fa-envelope-open-text"></i> Buka Undangan
+        </button>
+      </div>
+    </div>
+
+    <div id="main-content" class="hidden">
+      <nav
+        class="fixed bottom-0 w-full bg-white shadow-[0_-2px_10px_rgba(0,0,0,0.1)] z-40 md:hidden"
+      >
+        <ul
+          class="flex justify-around items-center h-16 text-xs font-semibold text-gray-500"
+        >
+          <li>
+            <a
+              href="#couple"
+              class="flex flex-col items-center hover:text-wedding-gold"
+              ><i class="fa-solid fa-heart mb-1 text-lg"></i> Mempelai</a
+            >
+          </li>
+          <li>
+            <a
+              href="#event"
+              class="flex flex-col items-center hover:text-wedding-gold"
+              ><i class="fa-solid fa-calendar-alt mb-1 text-lg"></i> Acara</a
+            >
+          </li>
+          <li>
+            <a
+              href="#gallery"
+              class="flex flex-col items-center hover:text-wedding-gold"
+              ><i class="fa-solid fa-images mb-1 text-lg"></i> Galeri</a
+            >
+          </li>
+          <li>
+            <a
+              href="#rsvp"
+              class="flex flex-col items-center hover:text-wedding-gold"
+              ><i class="fa-solid fa-envelope mb-1 text-lg"></i> RSVP</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <header
+        class="h-screen flex flex-col items-center justify-center text-center relative overflow-hidden"
+        style="
+          background-image: url(&quot;https://placehold.co/1920x1080/F9F6F0/D4AF37?text=Hero+Image+2&quot;);
+          background-size: cover;
+          background-position: center;
+        "
+      >
+        <div class="absolute inset-0 bg-white bg-opacity-70"></div>
+        <div class="relative z-10 px-4 fade-in">
+          <p
+            class="text-sm md:text-base font-semibold tracking-[0.3em] uppercase mb-4 text-gray-600"
+          >
+            Pernikahan
+          </p>
+          <h1
+            class="text-5xl md:text-7xl font-serif font-bold text-wedding-gold mb-4 italic"
+          >
+            Romeo & Juliet
+          </h1>
+          <p class="text-lg md:text-xl font-light italic">
+            "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
+            pasangan-pasangan untukmu..."
+          </p>
+          <div class="mt-8 flex justify-center gap-4">
+            <span class="border-b border-gray-400 w-16"></span>
+            <span class="border-b border-gray-400 w-16"></span>
+          </div>
+        </div>
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 animate-bounce text-wedding-gold">
+          <a href="#couple"
+            ><i class="fa-solid fa-chevron-down text-2xl"></i
+          ></a>
+        </div>
+      </header>
+
+      <section id="couple" class="py-24 px-4 bg-white">
+        <div class="max-w-4xl mx-auto text-center fade-in">
+          <h2
+            class="text-3xl md:text-4xl font-serif font-bold text-wedding-gold mb-12"
+          >
+            Pasangan Mempelai
+          </h2>
+
+          <div
+            class="flex flex-col md:flex-row items-center justify-between gap-12"
+          >
+            <!-- Mempelai Pria -->
+            <div class="flex-1 flex flex-col items-center fade-in">
+              <div
+                class="w-48 h-48 md:w-64 md:h-64 rounded-t-full rounded-b-md overflow-hidden border-4 border-wedding-gold p-1 mb-6"
+              >
+                <img
+                  src="https://placehold.co/400x500/2C3E50/FFFFFF?text=Groom"
+                  alt="Romeo"
+                  class="w-full h-full object-cover rounded-t-full rounded-b-md"
+                />
+              </div>
+              <h3 class="text-2xl font-serif font-bold mb-2">
+                Romeo Montague, S.T., M.Sc.
+              </h3>
+              <p class="text-sm text-gray-600 mb-4">
+                Putra Pertama dari<br />Bapak Montague & Ibu Lady Montague
+              </p>
+              <div class="flex gap-3 text-wedding-gold">
+                <a href="#" class="hover:text-wedding-dark transition"
+                  ><i class="fa-brands fa-instagram text-xl"></i
+                ></a>
+                <a href="#" class="hover:text-wedding-dark transition"
+                  ><i class="fa-brands fa-linkedin text-xl"></i
+                ></a>
+              </div>
+            </div>
+
+            <!-- Dan -->
+            <div class="text-5xl font-serif text-wedding-gold italic fade-in">
+              &
+            </div>
+
+            <!-- Mempelai Wanita -->
+            <div class="flex-1 flex flex-col items-center fade-in">
+              <div
+                class="w-48 h-48 md:w-64 md:h-64 rounded-t-full rounded-b-md overflow-hidden border-4 border-wedding-gold p-1 mb-6"
+              >
+                <img
+                  src="https://placehold.co/400x500/2C3E50/FFFFFF?text=Bride"
+                  alt="Juliet"
+                  class="w-full h-full object-cover rounded-t-full rounded-b-md"
+                />
+              </div>
+              <h3 class="text-2xl font-serif font-bold mb-2">
+                Juliet Capulet, S.E., M.B.A.
+              </h3>
+              <p class="text-sm text-gray-600 mb-4">
+                Putri Bungsu dari<br />Bapak Capulet & Ibu Lady Capulet
+              </p>
+              <div class="flex gap-3 text-wedding-gold">
+                <a href="#" class="hover:text-wedding-dark transition"
+                  ><i class="fa-brands fa-instagram text-xl"></i
+                ></a>
+                <a href="#" class="hover:text-wedding-dark transition"
+                  ><i class="fa-brands fa-twitter text-xl"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="event"
+        class="py-24 px-4 bg-wedding-light flower-bg relative"
+      >
+        <div class="absolute inset-0 bg-white bg-opacity-80"></div>
+        <div class="max-w-3xl mx-auto text-center relative z-10 fade-in">
+          <h2
+            class="text-3xl md:text-4xl font-serif font-bold text-wedding-gold mb-4"
+          >
+            Rangkaian Acara
+          </h2>
+          <p class="mb-12 text-gray-600">
+            Dengan memohon rahmat dan ridho Allah SWT, kami mengundang
+            Bapak/Ibu/Saudara/i untuk hadir pada acara pernikahan kami:
+          </p>
+
+          <div class="space-y-12 text-left">
+            <!-- Akad Nikah -->
+            <div
+              class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 fade-in relative overflow-hidden"
+            >
+              <div
+                class="absolute top-0 right-0 w-24 h-24 bg-wedding-gold opacity-10 rounded-bl-full"
+              ></div>
+              <h3
+                class="text-2xl font-serif font-bold text-wedding-dark border-b pb-4 mb-4"
+              >
+                <i class="fa-solid fa-ring text-wedding-gold mr-2"></i> Akad
+                Nikah
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <p class="font-semibold mb-1">
+                    <i class="fa-regular fa-calendar text-wedding-gold w-5"></i>
+                    Sabtu, 20 Desember 2026
+                  </p>
+                  <p class="font-semibold">
+                    <i class="fa-regular fa-clock text-wedding-gold w-5"></i>
+                    08:00 - 10:00 WIB
+                  </p>
+                </div>
+                <div>
+                  <p class="font-bold">Masjid Agung Kota</p>
+                  <p class="text-sm text-gray-600">
+                    Jl. Pangeran Diponegoro No. 1, Pusat Kota
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Resepsi -->
+            <div
+              class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 fade-in relative overflow-hidden"
+            >
+              <div
+                class="absolute top-0 right-0 w-24 h-24 bg-wedding-gold opacity-10 rounded-bl-full"
+              ></div>
+              <h3
+                class="text-2xl font-serif font-bold text-wedding-dark border-b pb-4 mb-4"
+              >
+                <i class="fa-solid fa-glass-cheers text-wedding-gold mr-2"></i>
+                Resepsi Pernikahan
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <p class="font-semibold mb-1">
+                    <i class="fa-regular fa-calendar text-wedding-gold w-5"></i>
+                    Sabtu, 20 Desember 2026
+                  </p>
+                  <p class="font-semibold">
+                    <i class="fa-regular fa-clock text-wedding-gold w-5"></i>
+                    11:00 - 14:00 WIB
+                  </p>
+                </div>
+                <div>
+                  <p class="font-bold">Grand Ballroom Hotel Bintang Lima</p>
+                  <p class="text-sm text-gray-600">
+                    Jl. Jend. Sudirman Kav 21, Pusat Kota
+                  </p>
+                </div>
+              </div>
+              <div class="mt-6 text-center">
+                <a
+                  href="https://maps.google.com"
+                  target="_blank"
+                  class="inline-block bg-wedding-dark hover:bg-gray-800 text-white font-semibold py-2 px-6 rounded-full transition duration-300 text-sm"
+                >
+                  <i class="fa-solid fa-map-location-dot mr-2"></i> Buka di
+                  Google Maps
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="py-24 px-4 bg-white">
+        <div class="max-w-5xl mx-auto text-center fade-in">
+          <h2
+            class="text-3xl md:text-4xl font-serif font-bold text-wedding-gold mb-4"
+          >
+            Galeri Momen
+          </h2>
+          <p class="mb-12 text-gray-600">
+            Sebuah cerita yang terekam dalam gambar.
+          </p>
+
+          <!-- Grid Galeri -->
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div class="overflow-hidden rounded-lg shadow-sm fade-in">
+              <img
+                src="https://placehold.co/600x800/E8F0FE/1A73E8?text=Gallery+1"
+                alt="Galeri 1"
+                class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer"
+              />
+            </div>
+            <div class="overflow-hidden rounded-lg shadow-sm fade-in">
+              <img
+                src="https://placehold.co/800x600/E8F0FE/1A73E8?text=Gallery+2"
+                alt="Galeri 2"
+                class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer"
+              />
+            </div>
+            <div class="overflow-hidden rounded-lg shadow-sm fade-in">
+              <img
+                src="https://placehold.co/600x800/E8F0FE/1A73E8?text=Gallery+3"
+                alt="Galeri 3"
+                class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer"
+              />
+            </div>
+            <div
+              class="overflow-hidden rounded-lg shadow-sm fade-in md:col-span-2"
+            >
+              <img
+                src="https://placehold.co/1200x600/E8F0FE/1A73E8?text=Video+Thumbnail"
+                alt="Galeri 4"
+                class="w-full h-64 md:h-80 object-cover hover:scale-105 transition duration-500 cursor-pointer relative"
+              />
+              <!-- Pseudo play button -->
+              <div
+                class="absolute inset-0 flex items-center justify-center pointer-events-none"
+              >
+                <i
+                  class="fa-solid fa-play-circle text-6xl text-white opacity-80 shadow-lg rounded-full"
+                ></i>
+              </div>
+            </div>
+            <div class="overflow-hidden rounded-lg shadow-sm fade-in">
+              <img
+                src="https://placehold.co/600x600/E8F0FE/1A73E8?text=Gallery+5"
+                alt="Galeri 5"
+                class="w-full h-full object-cover hover:scale-110 transition duration-500 cursor-pointer"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gift" class="py-24 px-4 bg-gray-50">
+        <div class="max-w-2xl mx-auto text-center fade-in">
+          <h2
+            class="text-3xl md:text-4xl font-serif font-bold text-wedding-gold mb-4"
+          >
+            Wedding Gift
+          </h2>
+          <p class="mb-8 text-gray-600">
+            Doa restu Anda merupakan karunia yang sangat berarti bagi kami.<br />Dan
+            jika memberi adalah ungkapan tanda kasih Anda, Anda dapat memberi
+            kado secara cashless.
+          </p>
+
+          <div class="flex flex-col md:flex-row justify-center gap-6">
+            <!-- Rekening Bank -->
+            <div
+              class="bg-white p-6 rounded-xl shadow-md border border-gray-100 flex-1 relative"
+            >
+              <i
+                class="fa-solid fa-building-columns text-3xl text-wedding-gold mb-4"
+              ></i>
+              <h4 class="font-bold text-lg mb-2">BCA</h4>
+              <p class="text-2xl tracking-widest font-mono mb-2" id="rek-bca">
+                1234567890
+              </p>
+              <p class="text-sm text-gray-500 mb-4">a.n. Romeo Montague</p>
+              <button
+                onclick="copyText('rek-bca')"
+                class="text-sm bg-gray-100 hover:bg-gray-200 py-2 px-4 rounded-full transition flex items-center justify-center mx-auto w-full"
+              >
+                <i class="fa-regular fa-copy mr-2"></i> Salin No. Rekening
+              </button>
+            </div>
+
+            <!-- E-Wallet / QRIS -->
+            <div
+              class="bg-white p-6 rounded-xl shadow-md border border-gray-100 flex-1"
+            >
+              <i class="fa-solid fa-qrcode text-3xl text-wedding-gold mb-4"></i>
+              <h4 class="font-bold text-lg mb-4">QRIS</h4>
+              <img
+                src="https://placehold.co/200x200/FFFFFF/000000?text=QR+Code"
+                alt="QRIS Code"
+                class="mx-auto border p-2 rounded-lg mb-4 w-32 h-32"
+              />
+              <p class="text-sm text-gray-500">Scan untuk Gopay/Ovo/Dana</p>
+            </div>
+          </div>
+
+          <div
+            id="copy-toast"
+            class="hidden mt-4 text-green-600 font-semibold text-sm transition-opacity duration-300 opacity-0"
+          >
+            <i class="fa-solid fa-check-circle mr-1"></i> Nomor rekening
+            berhasil disalin!
+          </div>
+        </div>
+      </section>
+
+      <section id="rsvp" class="py-24 px-4 bg-wedding-dark text-white relative">
+        <!-- Decorative top border -->
+        <div
+          class="absolute top-0 left-0 w-full overflow-hidden leading-none rotate-180"
+        >
+          <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+            class="relative block w-[calc(100%+1.3px)] h-[50px]"
+          >
+            <path
+              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+              class="fill-gray-50"
+            ></path>
+          </svg>
+        </div>
+
+        <div
+          class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 mt-8 fade-in"
+        >
+          <!-- Form RSVP -->
+          <div>
+            <h2 class="text-3xl font-serif font-bold text-wedding-gold mb-6">
+              RSVP
+            </h2>
+            <p class="mb-6 text-gray-300 text-sm">
+              Mohon konfirmasi kehadiran Anda untuk membantu kami dalam
+              menyiapkan yang terbaik.
+            </p>
+
+            <form id="rsvp-form" class="space-y-4 text-wedding-dark">
+              <div>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Nama Lengkap"
+                  required
+                  class="w-full px-4 py-3 rounded-lg bg-white/90 focus:outline-none focus:ring-2 focus:ring-wedding-gold"
+                />
+              </div>
+              <div>
+                <select
+                  id="attendance"
+                  required
+                  class="w-full px-4 py-3 rounded-lg bg-white/90 focus:outline-none focus:ring-2 focus:ring-wedding-gold"
+                >
+                  <option value="" disabled selected>
+                    Apakah Anda akan hadir?
+                  </option>
+                  <option value="Hadir">Ya, Saya akan hadir</option>
+                  <option value="Tidak Hadir">
+                    Maaf, saya tidak bisa hadir
+                  </option>
+                </select>
+              </div>
+              <div>
+                <select
+                  id="guest_count"
+                  class="w-full px-4 py-3 rounded-lg bg-white/90 focus:outline-none focus:ring-2 focus:ring-wedding-gold"
+                >
+                  <option value="" disabled selected>Jumlah Tamu</option>
+                  <option value="1">1 Orang</option>
+                  <option value="2">2 Orang</option>
+                </select>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-wedding-gold hover:bg-yellow-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300"
+              >
+                Konfirmasi Kehadiran
+              </button>
+            </form>
+            <div
+              id="rsvp-success"
+              class="hidden mt-4 text-green-400 text-sm font-semibold"
+            >
+              <i class="fa-solid fa-check-circle"></i> Terima kasih atas
+              konfirmasinya!
+            </div>
+          </div>
+
+          <!-- Buku Tamu -->
+          <div>
+            <h2 class="text-3xl font-serif font-bold text-wedding-gold mb-6">
+              Buku Tamu
+            </h2>
+            <p class="mb-6 text-gray-300 text-sm">
+              Kirimkan doa dan ucapan manis untuk kedua mempelai.
+            </p>
+
+            <form id="wish-form" class="space-y-4 mb-6 text-wedding-dark">
+              <div>
+                <input
+                  type="text"
+                  id="wish-name"
+                  placeholder="Nama Anda"
+                  required
+                  class="w-full px-4 py-2 rounded-lg bg-white/90 focus:outline-none focus:ring-2 focus:ring-wedding-gold text-sm"
+                />
+              </div>
+              <div>
+                <textarea
+                  id="wish-message"
+                  rows="3"
+                  placeholder="Tuliskan ucapan dan doa..."
+                  required
+                  class="w-full px-4 py-2 rounded-lg bg-white/90 focus:outline-none focus:ring-2 focus:ring-wedding-gold text-sm resize-none"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="bg-gray-200 hover:bg-white text-wedding-dark font-bold py-2 px-4 rounded-lg transition duration-300 text-sm flex items-center justify-center w-full"
+              >
+                <i class="fa-regular fa-paper-plane mr-2"></i> Kirim Ucapan
+              </button>
+            </form>
+
+            <!-- List Ucapan -->
+            <div
+              class="h-64 overflow-y-auto bg-white/10 p-4 rounded-lg border border-gray-600"
+              id="wishes-list"
+            >
+              <!-- Sample Wish -->
+              <div class="bg-white/20 p-3 rounded mb-3 text-sm">
+                <h5 class="font-bold text-wedding-gold">
+                  Keluarga Besar Capulet
+                </h5>
+                <p class="text-gray-200 mt-1">
+                  Selamat menempuh hidup baru! Semoga menjadi keluarga yang
+                  sakinah, mawaddah, warahmah.
+                </p>
+                <span class="text-xs text-gray-400 mt-2 block"
+                  ><i class="fa-regular fa-clock"></i> Baru saja</span
+                >
+              </div>
+              <div class="bg-white/20 p-3 rounded mb-3 text-sm">
+                <h5 class="font-bold text-wedding-gold">Sahabat Karib</h5>
+                <p class="text-gray-200 mt-1">
+                  Happy wedding bro! Akhirnya sold out juga.
+                </p>
+                <span class="text-xs text-gray-400 mt-2 block"
+                  ><i class="fa-regular fa-clock"></i> 2 jam yang lalu</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer
+          class="mt-16 text-center text-gray-400 text-xs pb-16 md:pb-4 border-t border-gray-700 pt-6"
+        >
+          <p>
+            Maha Suci Allah yang telah menciptakan makhluk-Nya
+            berpasang-pasangan.
+          </p>
+          <p class="mt-2">
+            &copy; 2026 Romeo & Juliet Wedding. Built with
+            <i class="fa-solid fa-heart text-red-500"></i>
+          </p>
+        </footer>
+      </section>
+
+      <button
+        id="music-btn"
+        class="fixed bottom-24 md:bottom-8 right-4 z-50 bg-wedding-gold text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center animate-spin-slow"
+      >
+        <i class="fa-solid fa-compact-disc text-2xl"></i>
+      </button>
+      <!-- Audio Element (hidden) -->
+      <audio id="bg-music" loop>
+        <!-- Menggunakan audio dummy yang valid -->
+        <source
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+          type="audio/mpeg"
+        />
+        Browser Anda tidak mendukung elemen audio.
+      </audio>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const openBtn = document.getElementById("open-invitation");
+        const heroOverlay = document.getElementById("hero-overlay");
+        const mainContent = document.getElementById("main-content");
+        const body = document.getElementById("body");
+        const bgMusic = document.getElementById("bg-music");
+        const musicBtn = document.getElementById("music-btn");
+        let isPlaying = false;
+
+        // Logika Membuka Undangan
+        openBtn.addEventListener("click", () => {
+          // 1. Transisi hilangkan hero overlay
+          heroOverlay.classList.add("opacity-0");
+
+          setTimeout(() => {
+            heroOverlay.classList.add("hidden");
+
+            // 2. Tampilkan main content
+            mainContent.classList.remove("hidden");
+
+            // 3. Izinkan scrolling
+            body.classList.remove("overflow-hidden");
+
+            // 4. Trigger animasi fade-in pertama kali
+            checkFade();
+
+            // 5. Mainkan musik
+            bgMusic.volume = 0.5;
+            bgMusic
+              .play()
+              .then(() => {
+                isPlaying = true;
+                musicBtn.innerHTML =
+                  '<i class="fa-solid fa-compact-disc text-2xl animate-spin"></i>';
+              })
+              .catch((error) => {
+                console.log("Auto-play was prevented by browser.");
+              });
+          }, 1000); // Tunggu durasi transisi opacity CSS
+        });
+
+        // Kontrol Musik
+        musicBtn.addEventListener("click", () => {
+          if (isPlaying) {
+            bgMusic.pause();
+            musicBtn.innerHTML = '<i class="fa-solid fa-music text-xl"></i>';
+          } else {
+            bgMusic.play();
+            musicBtn.innerHTML =
+              '<i class="fa-solid fa-compact-disc text-2xl animate-spin"></i>';
+          }
+          isPlaying = !isPlaying;
+        });
+
+        // Animasi Fade-in saat scroll
+        const fadeElements = document.querySelectorAll(".fade-in");
+
+        function checkFade() {
+          const triggerBottom = (window.innerHeight / 5) * 4.5;
+
+          fadeElements.forEach((element) => {
+            const boxTop = element.getBoundingClientRect().top;
+            if (boxTop < triggerBottom) {
+              element.classList.add("visible");
+            }
+          });
+        }
+
+        window.addEventListener("scroll", checkFade);
+
+        // Simulasi Submit RSVP
+        const rsvpForm = document.getElementById("rsvp-form");
+        const rsvpSuccess = document.getElementById("rsvp-success");
+
+        rsvpForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          // Simulasi loading
+          const btn = rsvpForm.querySelector("button");
+          const originalText = btn.innerHTML;
+          btn.innerHTML =
+            '<i class="fa-solid fa-circle-notch fa-spin"></i> Mengirim...';
+
+          setTimeout(() => {
+            rsvpSuccess.classList.remove("hidden");
+            btn.innerHTML = originalText;
+            rsvpForm.reset();
+            // Sembunyikan pesan sukses setelah 3 detik
+            setTimeout(() => rsvpSuccess.classList.add("hidden"), 3000);
+          }, 1500);
+        });
+
+        // Simulasi Submit Buku Tamu
+        const wishForm = document.getElementById("wish-form");
+        const wishesList = document.getElementById("wishes-list");
+
+        wishForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const name = document.getElementById("wish-name").value;
+          const message = document.getElementById("wish-message").value;
+
+          // Buat elemen baru
+          const newWish = document.createElement("div");
+          newWish.className = "bg-white/20 p-3 rounded mb-3 text-sm fade-in";
+          newWish.innerHTML = `
+                    <h5 class="font-bold text-wedding-gold">${name}</h5>
+                    <p class="text-gray-200 mt-1">${message}</p>
+                    <span class="text-xs text-gray-400 mt-2 block"><i class="fa-regular fa-clock"></i> Baru saja</span>
+                `;
+
+          // Tambahkan di atas
+          wishesList.insertBefore(newWish, wishesList.firstChild);
+
+          // Trigger animasi
+          setTimeout(() => newWish.classList.add("visible"), 50);
+
+          wishForm.reset();
+        });
+      });
+
+      // Fungsi Salin Teks
+      function copyText(elementId) {
+        const textToCopy = document.getElementById(elementId).innerText;
+
+        // Gunakan API clipboard atau fallback
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(textToCopy).then(showCopyToast);
+        } else {
+          // Fallback untuk browser lama / non-https
+          let textArea = document.createElement("textarea");
+          textArea.value = textToCopy;
+          textArea.style.position = "fixed";
+          textArea.style.left = "-999999px";
+          textArea.style.top = "-999999px";
+          document.body.appendChild(textArea);
+          textArea.focus();
+          textArea.select();
+          try {
+            document.execCommand("copy");
+            showCopyToast();
+          } catch (err) {
+            console.error("Fallback: Oops, unable to copy", err);
+          }
+          document.body.removeChild(textArea);
+        }
+      }
+
+      function showCopyToast() {
+        const toast = document.getElementById("copy-toast");
+        toast.classList.remove("hidden");
+        setTimeout(() => {
+          toast.classList.add("opacity-100");
+        }, 10); // Memberikan waktu agar display:block terender sebelum merubah opacity
+
+        setTimeout(() => {
+          toast.classList.remove("opacity-100");
+          setTimeout(() => {
+            toast.classList.add("hidden");
+          }, 300); // Tunggu transisi selesai
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>

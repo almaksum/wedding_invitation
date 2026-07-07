@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/example2.css" />
+    <link rel="shortcut icon" href="asset/main.png" type="image/x-icon" />
+
+    <title>Wedding Invitation - Example 2</title>
+  </head>
+  <body id="body-content">
+    <!-- Cover Overlay -->
+    <div id="welcome-overlay">
+      <div class="px-4">
+        <p
+          class="letter-spacing-3 mb-2 text-uppercase text-gold font-elegant fs-6"
+        >
+          The Wedding Of
+        </p>
+        <h1
+          class="display-1 font-script text-white mb-4"
+          style="text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5)"
+        >
+          Leo & Zara
+        </h1>
+        <p class="fw-light mb-5 text-light">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+        <button id="btn-open" class="btn-gold">
+          <i class="fa-solid fa-envelope-open-text me-2"></i> Buka Undangan
+        </button>
+      </div>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="fixed-bottom bottom-nav py-2">
+      <div class="container">
+        <div
+          class="d-flex justify-content-between align-items-center text-center px-2"
+        >
+          <a href="#home" class="nav-item-bottom active">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+          </a>
+          <a href="#couple" class="nav-item-bottom">
+            <i class="fa-solid fa-ring"></i>
+            <span>Couple</span>
+          </a>
+          <a href="#event" class="nav-item-bottom">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>Event</span>
+          </a>
+          <a href="#gallery" class="nav-item-bottom">
+            <i class="fa-solid fa-images"></i>
+            <span>Gallery</span>
+          </a>
+          <a href="#rsvp" class="nav-item-bottom">
+            <i class="fa-solid fa-envelope-open-text"></i>
+            <span>RSVP</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div id="main-wrapper">
+      <!-- Hero Section -->
+      <header id="home" class="hero-section">
+        <div class="hero-content reveal w-100">
+          <p
+            class="text-uppercase tracking-widest text-gold font-elegant mb-2 letter-spacing-3"
+          >
+            We Are Tying The Knot
+          </p>
+          <h1 class="display-1 font-script text-white mb-4">Leo & Zara</h1>
+          <div class="divider-gold mb-4"></div>
+          <p class="text-light fw-light fs-5 px-3 font-elegant">
+            15 . 05 . 2026
+          </p>
+        </div>
+      </header>
+
+      <!-- Couple Section -->
+      <section id="couple" class="py-5">
+        <div class="container py-5 text-center">
+          <p class="text-gold font-elegant text-uppercase mb-2">
+            The Happy Couple
+          </p>
+          <h2 class="font-script display-4 mb-3">Mempelai</h2>
+          <div class="divider-gold mb-5"></div>
+
+          <div class="row align-items-center justify-content-center mt-4 g-5">
+            <!-- Groom -->
+            <div class="col-lg-4 col-md-5 reveal">
+              <img
+                src="asset/man.png"
+                alt="Leo"
+                class="couple-img mb-4 shadow-lg"
+              />
+              <h3 class="font-elegant fw-bold text-gold h4">
+                Leonardo DiCaprio, S.T.
+              </h3>
+              <p class="text-light small mb-3">
+                Putra dari Bapak Thomas & Ibu Martha
+              </p>
+              <div>
+                <a href="#" class="text-gold fs-5 me-3"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+                <a href="#" class="text-gold fs-5"
+                  ><i class="fa-brands fa-twitter"></i
+                ></a>
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="col-lg-2 col-md-2 reveal">
+              <h1 class="font-script text-gold display-1 m-0">&</h1>
+            </div>
+
+            <!-- Bride -->
+            <div class="col-lg-4 col-md-5 reveal">
+              <img
+                src="asset/women.png"
+                alt="Zara"
+                class="couple-img mb-4 shadow-lg"
+              />
+              <h3 class="font-elegant fw-bold text-gold h4">
+                Zara Larsson, S.Ds.
+              </h3>
+              <p class="text-light small mb-3">
+                Putri dari Bapak William & Ibu Sarah
+              </p>
+              <div>
+                <a href="#" class="text-gold fs-5 me-3"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+                <a href="#" class="text-gold fs-5"
+                  ><i class="fa-brands fa-tiktok"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Event Timeline Section -->
+      <section id="event" class="py-5 bg-navy-light relative">
+        <div class="container py-5">
+          <div class="text-center mb-5 reveal">
+            <p class="text-gold font-elegant text-uppercase mb-2">
+              Save The Date
+            </p>
+            <h2 class="font-script display-4 mb-3">Rangkaian Acara</h2>
+            <div class="divider-gold mb-3"></div>
+            <p class="text-light fw-light mt-3">
+              Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Anda
+              untuk hadir.
+            </p>
+          </div>
+
+          <div class="row g-4 justify-content-center">
+            <!-- Akad Card -->
+            <div class="col-md-5 reveal">
+              <div class="card luxury-card h-100 p-4 text-center text-light">
+                <div class="card-body">
+                  <i class="fa-solid fa-mosque fs-1 text-gold mb-4"></i>
+                  <h3 class="font-elegant text-gold mb-3">Akad Nikah</h3>
+                  <hr class="border-gold opacity-50 mb-4 w-50 mx-auto" />
+                  <div class="mb-4">
+                    <h5 class="fw-bold font-elegant">Minggu, 15 Mei 2026</h5>
+                    <p class="mb-0 fw-light">Pukul 09.00 WIB - Selesai</p>
+                  </div>
+                  <div class="mb-4">
+                    <p class="fw-bold mb-1 text-gold">
+                      The Ritz-Carlton Grand Ballroom
+                    </p>
+                    <p class="fw-light small opacity-75">
+                      Pacific Place, SCBD, Jakarta
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Resepsi Card -->
+            <div class="col-md-5 reveal">
+              <div class="card luxury-card h-100 p-4 text-center text-light">
+                <div class="card-body">
+                  <i
+                    class="fa-solid fa-champagne-glasses fs-1 text-gold mb-4"
+                  ></i>
+                  <h3 class="font-elegant text-gold mb-3">Resepsi</h3>
+                  <hr class="border-gold opacity-50 mb-4 w-50 mx-auto" />
+                  <div class="mb-4">
+                    <h5 class="fw-bold font-elegant">Minggu, 15 Mei 2026</h5>
+                    <p class="mb-0 fw-light">Pukul 19.00 WIB - 22.00 WIB</p>
+                  </div>
+                  <div class="mb-4">
+                    <p class="fw-bold mb-1 text-gold">
+                      The Ritz-Carlton Grand Ballroom
+                    </p>
+                    <p class="fw-light small opacity-75">
+                      Pacific Place, SCBD, Jakarta
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-5 reveal">
+            <a
+              href="https://maps.app.goo.gl/QJ3rdLA9GjD3XEN4A"
+              target="_blank"
+              class="btn-gold text-decoration-none d-inline-block"
+            >
+              <i class="fa-solid fa-map-location-dot me-2"></i> Buka Google Maps
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery Section -->
+      <section id="gallery" class="py-5">
+        <div class="container py-5 text-center">
+          <p class="text-gold font-elegant text-uppercase mb-2">Our Memories</p>
+          <h2 class="font-script display-4 mb-3">Galeri Bahagia</h2>
+          <div class="divider-gold mb-5"></div>
+
+          <div class="row g-3">
+            <div class="col-6 col-md-4 reveal">
+              <img
+                src="asset/gallery1.png"
+                class="img-fluid rounded border border-gold opacity-75 w-100 h-100 object-fit-cover shadow"
+                alt="Galeri"
+              />
+            </div>
+            <div class="col-6 col-md-4 reveal">
+              <img
+                src="asset/gallery3.png"
+                class="img-fluid rounded border border-gold opacity-75 w-100 h-100 object-fit-cover shadow"
+                alt="Galeri"
+              />
+            </div>
+            <div class="col-12 col-md-4 reveal">
+              <img
+                src="asset/gallery2.png"
+                class="img-fluid rounded border border-gold opacity-75 w-100 h-100 object-fit-cover shadow"
+                alt="Galeri"
+              />
+            </div>
+
+            <!-- Video Placeholder -->
+            <!-- <div class="col-12 mt-4 reveal">
+              <div
+                class="position-relative rounded overflow-hidden border border-gold"
+                style="height: 400px"
+              >
+                <img
+                  src="https://placehold.co/1200x600/0A1128/D4AF37?text=Cinematic+Video"
+                  class="w-100 h-100 object-fit-cover opacity-50"
+                  alt="Video"
+                />
+                <div class="position-absolute top-50 start-50 translate-middle">
+                  <a href="#" class="text-gold text-decoration-none">
+                    <i
+                      class="fa-regular fa-circle-play display-1 shadow-lg rounded-circle"
+                    ></i>
+                  </a>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Wedding Gift & RSVP Combined Section -->
+      <section
+        id="rsvp"
+        class="py-5 bg-navy-light text-light border-top border-gold"
+      >
+        <div class="container py-5">
+          <!-- Wedding Gift Box -->
+          <div class="row justify-content-center mb-5 reveal">
+            <div class="col-lg-8 text-center">
+              <h2 class="font-script display-5 text-gold mb-3">Wedding Gift</h2>
+              <p class="fw-light mb-4 opacity-75">
+                Bagi keluarga dan sahabat yang ingin memberikan tanda kasih,
+                dapat mengirimkan melalui fitur di bawah ini.
+              </p>
+
+              <div class="row g-4 justify-content-center">
+                <div class="col-md-6">
+                  <div class="luxury-card p-4 h-100">
+                    <i
+                      class="fa-solid fa-building-columns text-gold fs-2 mb-3"
+                    ></i>
+                    <h5 class="font-elegant text-gold">Bank BCA</h5>
+                    <p
+                      class="fs-4 font-monospace mb-1 tracking-widest text-white"
+                      id="rek-bca"
+                    >
+                      0987 654 321
+                    </p>
+                    <p class="small opacity-75 mb-4">a.n. Leonardo</p>
+                    <button
+                      class="btn btn-outline-gold btn-sm px-4 rounded-pill"
+                      onclick="copyClipboard('rek-bca')"
+                    >
+                      <i class="fa-regular fa-copy me-2"></i> Salin Rekening
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider-gold mb-5"></div>
+
+          <!-- RSVP & Buku Tamu -->
+          <div class="row justify-content-center g-5 mt-3">
+            <!-- Form RSVP -->
+            <div class="col-lg-5 reveal">
+              <h3 class="font-elegant text-gold mb-4">Kehadiran</h3>
+              <div class="luxury-card p-4">
+                <form id="rsvpForm">
+                  <div class="mb-3">
+                    <input
+                      type="text"
+                      class="form-control form-control-lg fs-6"
+                      required
+                      placeholder="Nama Lengkap Anda"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <select class="form-select form-select-lg fs-6" required>
+                      <option value="" selected disabled>
+                        Apakah Anda akan hadir?
+                      </option>
+                      <option value="Hadir">Ya, Saya Hadir</option>
+                      <option value="Tidak Hadir">
+                        Maaf, Tidak Bisa Hadir
+                      </option>
+                    </select>
+                  </div>
+                  <div class="mb-4">
+                    <select class="form-select form-select-lg fs-6">
+                      <option value="1">1 Orang</option>
+                      <option value="2">2 Orang</option>
+                    </select>
+                  </div>
+                  <button
+                    type="submit"
+                    class="btn-gold w-100"
+                    id="btn-submit-rsvp"
+                  >
+                    Konfirmasi
+                  </button>
+
+                  <div
+                    id="rsvp-alert"
+                    class="alert alert-success mt-3 d-none mb-0 bg-transparent border-gold text-gold"
+                    role="alert"
+                  >
+                    Terima kasih atas konfirmasinya!
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Guestbook -->
+            <div class="col-lg-6 reveal">
+              <h3 class="font-elegant text-gold mb-4">Buku Tamu</h3>
+
+              <form id="wishForm" class="mb-4 luxury-card p-4">
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    id="wishName"
+                    class="form-control"
+                    placeholder="Nama Anda"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <textarea
+                    id="wishMessage"
+                    class="form-control"
+                    rows="3"
+                    placeholder="Tulis ucapan indah Anda..."
+                    required
+                  ></textarea>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-gold"
+                    data-bs-toggle="modal"
+                    data-bs-target="#aiWishModal"
+                  >
+                    ✨ Buat dengan AI
+                  </button>
+                  <button class="btn-gold btn-sm px-4" type="submit">
+                    Kirim Ucapan
+                  </button>
+                </div>
+              </form>
+
+              <!-- List of wishes -->
+              <div class="wishes-container luxury-card p-3" id="wishesList">
+                <div
+                  class="border-bottom border-secondary border-opacity-50 pb-3 mb-3"
+                >
+                  <h6 class="fw-bold mb-1 text-gold font-elegant">
+                    Keluarga Bapak Ahmad
+                  </h6>
+                  <p class="mb-1 small text-light fw-light">
+                    Selamat menempuh hidup baru. Semoga menjadi keluarga yang
+                    sakinah, mawaddah, warahmah.
+                  </p>
+                  <small class="text-muted" style="font-size: 0.7rem"
+                    >1 jam yang lalu</small
+                  >
+                </div>
+                <div
+                  class="border-bottom border-secondary border-opacity-50 pb-3 mb-3"
+                >
+                  <h6 class="fw-bold mb-1 text-gold font-elegant">
+                    Sarah & Partner
+                  </h6>
+                  <p class="mb-1 small text-light fw-light">
+                    Happy wedding bestie! So happy for both of you, wishing you
+                    a lifetime of joy.
+                  </p>
+                  <small class="text-muted" style="font-size: 0.7rem"
+                    >5 jam yang lalu</small
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer
+          class="text-center py-5 mt-4 text-muted border-top border-secondary border-opacity-25"
+        >
+          <p class="font-script fs-2 text-gold mb-2">Leo & Zara</p>
+          <small class="text-light"
+            >Atas kehadiran dan doa restu Bapak/Ibu/Saudara/i, kami ucapkan
+            terima kasih.</small
+          >
+          <br /><br /><br />
+          <small class="text-light" style="font-size: 0.7rem"
+            >&copy; 2026 Luxury Invitation. Designed by MR.FIXAJA</small
+          >
+        </footer>
+      </section>
+    </div>
+
+    <!-- AI Wish Modal -->
+    <div
+      class="modal fade"
+      id="aiWishModal"
+      tabindex="-1"
+      aria-labelledby="aiWishModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-navy border-gold text-light">
+          <div class="modal-header border-bottom border-secondary">
+            <h5
+              class="modal-title font-elegant text-gold"
+              id="aiWishModalLabel"
+            >
+              ✨ AI Message Generator
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p class="small text-muted mb-3">
+              Biarkan AI membantu Anda merangkai kata-kata elegan untuk kedua
+              mempelai.
+            </p>
+            <div class="mb-3">
+              <label class="form-label fw-light small"
+                >Hubungan dengan mempelai:</label
+              >
+              <select class="form-select" id="aiRelation">
+                <option value="Sahabat">Sahabat</option>
+                <option value="Rekan kerja">Rekan Kerja</option>
+                <option value="Keluarga">Keluarga</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-light small">Gaya bahasa:</label>
+              <select class="form-select" id="aiTone">
+                <option value="Formal dan Penuh Doa">Formal & Penuh Doa</option>
+                <option value="Romantis dan Menyentuh">Menyentuh</option>
+                <option value="Modern dan Estetik">Modern Estetik</option>
+              </select>
+            </div>
+            <div
+              id="aiError"
+              class="alert alert-danger bg-transparent border-danger text-danger d-none small py-2 mb-0"
+            ></div>
+          </div>
+          <div class="modal-footer border-top border-secondary">
+            <button
+              type="button"
+              class="btn btn-outline-light rounded-pill btn-sm px-3"
+              data-bs-dismiss="modal"
+            >
+              Batal
+            </button>
+            <button
+              type="button"
+              class="btn-gold btn-sm px-4"
+              id="btnGenerateWish"
+            >
+              ✨ Generate
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notification for Copy -->
+    <div
+      class="toast-container position-fixed top-0 start-50 translate-middle-x p-3"
+      style="z-index: 1060"
+    >
+      <div
+        id="copyToast"
+        class="toast align-items-center text-white bg-dark border-gold"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="d-flex">
+          <div class="toast-body text-gold font-elegant">
+            <i class="fa-solid fa-check me-2"></i> Rekening berhasil disalin
+          </div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Background Music & Controller -->
+    <button id="music-control">
+      <i class="fa-solid fa-compact-disc spin" id="music-icon"></i>
+    </button>
+    <audio id="bg-music" loop>
+      <source src="asset/music.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Javascript -->
+    <script src="js/example2.js"></script>
+  </body>
+</html>
