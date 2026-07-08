@@ -1,1 +1,1 @@
-[](example2.html)
+[](index.html)
